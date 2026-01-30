@@ -11,17 +11,21 @@ function selectOption(option) {
         });
     } else if (option === 'no') {
         // Change text on the "No" button to "You sure?"
-        document.getElementById('no-button').innerText = 'Seguro??? :c'; 
+        document.getElementById('no-button').innerText = 'You sure?'; 
         // Increase font size of "Yes" button
         var yesButton = document.getElementById('yes-button');
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
         var newSize = parseFloat(currentFontSize) * 2; // Increase font size by  * 2px
         yesButton.style.fontSize = newSize + 'px';
+    } else {
+        // If neither "Yes" nor "No" was clicked, show an alert message
+        alert('Invalid option!');
+    }
 }
 
 // Function to flash rainbow colors and then execute a callback function
 function flashRainbowColors(callback) {
-    var colors = ['#eb3f3f', '#eb943d', '#dddd64', '#62db62', '#3b3bdf', '#7437a0', '#9e40c7'];
+    var colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
     var i = 0;
     var interval = setInterval(function() {
         document.body.style.backgroundColor = colors[i];
